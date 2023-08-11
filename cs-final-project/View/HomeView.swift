@@ -13,16 +13,16 @@ struct HomeView: View {
             
             Text("Run to Mordor Running Challenge")
                 .font(.title)
-                .frame(alignment: .center)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(Color(red: 0.10, green: 0.16, blue: 0.34, opacity: 1.00))
                     .frame(maxHeight: 400)
                 
-                VStack(spacing: 15){
+                VStack(){
                     CircularProgressView(progress: 0.5)
-                        .frame(width: 250, height: 250)
+                        .frame(maxWidth: 300, maxHeight: 300)
                     HStack(spacing: 100){
                         VStack{
                             Text("Goal")
@@ -35,7 +35,7 @@ struct HomeView: View {
                             Text("50Km")
                         }
                     }
-                }
+                }.padding()
             }.foregroundColor(.white)
             
             HStack {
@@ -46,7 +46,6 @@ struct HomeView: View {
                     print("Hello")
                 }
             }
-            
             
             ZStack() {
                 RoundedRectangle(cornerRadius: 15)
