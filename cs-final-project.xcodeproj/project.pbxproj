@@ -11,6 +11,9 @@
 		3C363A2B2A83D6A500400C17 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A2A2A83D6A500400C17 /* HomeView.swift */; };
 		3C363A2D2A83D80200400C17 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A2C2A83D80200400C17 /* CircularProgressView.swift */; };
 		3C363A2F2A83DAA300400C17 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A2E2A83DAA200400C17 /* ContentView.swift */; };
+		3C363A4F2A8672B900400C17 /* ActivityLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A4E2A8672B900400C17 /* ActivityLogViewModel.swift */; };
+		3C363A552A86BAEB00400C17 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A542A86BAEA00400C17 /* Activity.swift */; };
+		3C363A572A86C02D00400C17 /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A562A86C02D00400C17 /* HealthService.swift */; };
 		3CDCF02D2A83B88F006FA771 /* cs_final_projectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF02C2A83B88F006FA771 /* cs_final_projectApp.swift */; };
 		3CDCF02F2A83B88F006FA771 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF02E2A83B88F006FA771 /* ActivityLogView.swift */; };
 		3CDCF0312A83B891006FA771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CDCF0302A83B891006FA771 /* Assets.xcassets */; };
@@ -22,6 +25,10 @@
 		3C363A2A2A83D6A500400C17 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3C363A2C2A83D80200400C17 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		3C363A2E2A83DAA200400C17 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3C363A4E2A8672B900400C17 /* ActivityLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogViewModel.swift; sourceTree = "<group>"; };
+		3C363A542A86BAEA00400C17 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		3C363A562A86C02D00400C17 /* HealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
+		3C363A592A87FB1300400C17 /* cs-final-project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cs-final-project.entitlements"; sourceTree = "<group>"; };
 		3CDCF0292A83B88F006FA771 /* cs-final-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs-final-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CDCF02C2A83B88F006FA771 /* cs_final_projectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cs_final_projectApp.swift; sourceTree = "<group>"; };
 		3CDCF02E2A83B88F006FA771 /* ActivityLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogView.swift; sourceTree = "<group>"; };
@@ -40,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C363A582A87F7A900400C17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C363A542A86BAEA00400C17 /* Activity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3CDCF0202A83B88F006FA771 = {
 			isa = PBXGroup;
 			children = (
@@ -59,10 +74,14 @@
 		3CDCF02B2A83B88F006FA771 /* cs-final-project */ = {
 			isa = PBXGroup;
 			children = (
+				3C363A592A87FB1300400C17 /* cs-final-project.entitlements */,
 				3CDCF02C2A83B88F006FA771 /* cs_final_projectApp.swift */,
+				3C363A582A87F7A900400C17 /* Model */,
 				3CDCF03A2A83BB30006FA771 /* View */,
 				3CDCF0302A83B891006FA771 /* Assets.xcassets */,
 				3CDCF0322A83B891006FA771 /* Preview Content */,
+				3C363A4E2A8672B900400C17 /* ActivityLogViewModel.swift */,
+				3C363A562A86C02D00400C17 /* HealthService.swift */,
 			);
 			path = "cs-final-project";
 			sourceTree = "<group>";
@@ -162,7 +181,10 @@
 				3C363A2F2A83DAA300400C17 /* ContentView.swift in Sources */,
 				3CDCF02F2A83B88F006FA771 /* ActivityLogView.swift in Sources */,
 				3C363A2D2A83D80200400C17 /* CircularProgressView.swift in Sources */,
+				3C363A4F2A8672B900400C17 /* ActivityLogViewModel.swift in Sources */,
+				3C363A552A86BAEB00400C17 /* Activity.swift in Sources */,
 				3CDCF02D2A83B88F006FA771 /* cs_final_projectApp.swift in Sources */,
+				3C363A572A86C02D00400C17 /* HealthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,11 +310,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "cs-final-project/cs-final-project.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"cs-final-project/Preview Content\"";
+				DEVELOPMENT_TEAM = 842RED367Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "To get running data and use in the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,11 +341,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "cs-final-project/cs-final-project.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"cs-final-project/Preview Content\"";
+				DEVELOPMENT_TEAM = 842RED367Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "To get running data and use in the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
