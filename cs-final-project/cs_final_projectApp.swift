@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct cs_final_projectApp: App {
+    @StateObject var activityModel = ActivityModel()
+    @StateObject var healthService = HealthService()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ActivityLogView()
+                .environmentObject(activityModel)
         }
     }
 }

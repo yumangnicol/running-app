@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ActivityLogView: View {
-    var body: some View {                
-        List {
-            HStack{
-                Image(systemName: "figure.run")
-                VStack{
-                    Text("10KM")
-                    Text("25 Jan 10:30PM")
-                }
+//    @ObservedObject var viewModel = ActivityLogViewModel()
+    @EnvironmentObject var activityModel: ActivityModel
+            
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Your activities")
+                .font(.title)
+                .padding(20)
+            
+            List(activityModel.getActivities()) { activity in
+                ActivityCellView(distance: activity.distance, date: activity.startDate)
+            }
+            .listStyle(.plain)
+            .listRowSeparator(.hidden)
+            .onAppear {
+                HealthService.shared.requestAuthorization()
+                activityModel.fetchActivities()
             }
         }
     }

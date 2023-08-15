@@ -47,20 +47,7 @@ struct HomeView: View {
                 }
             }
             
-            ZStack() {
-                RoundedRectangle(cornerRadius: 15)
-                    .frame(maxWidth: .infinity, maxHeight: 80)
-                    .foregroundColor(.red)
-                HStack{
-                    Image(systemName: "figure.run")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: 40)
-                    Text("10KM")
-                    Spacer()
-                    Text("25 Jan 10:30PM")
-                }.padding()
-            }
+            ActivityCellView(distance: "10KM", date: "This is a date")
             
         }.padding()
     }

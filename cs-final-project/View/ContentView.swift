@@ -19,6 +19,8 @@ struct ContentView: View {
                 .tabItem {
                     Label("Challenges", systemImage: "trophy.fill")
                 }
+        }.onAppear {
+            HealthService.shared.requestAuthorization()            
         }
     }
 }
