@@ -14,6 +14,8 @@
 		3C363A4F2A8672B900400C17 /* ActivityLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A4E2A8672B900400C17 /* ActivityLogViewModel.swift */; };
 		3C363A552A86BAEB00400C17 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A542A86BAEA00400C17 /* Activity.swift */; };
 		3C363A572A86C02D00400C17 /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A562A86C02D00400C17 /* HealthService.swift */; };
+		3C363A5F2A8BF4EE00400C17 /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A5E2A8BF4EE00400C17 /* ActivityCellView.swift */; };
+		3C363A612A8C305A00400C17 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A602A8C305A00400C17 /* Extensions.swift */; };
 		3CDCF02D2A83B88F006FA771 /* cs_final_projectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF02C2A83B88F006FA771 /* cs_final_projectApp.swift */; };
 		3CDCF02F2A83B88F006FA771 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF02E2A83B88F006FA771 /* ActivityLogView.swift */; };
 		3CDCF0312A83B891006FA771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CDCF0302A83B891006FA771 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		3C363A542A86BAEA00400C17 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		3C363A562A86C02D00400C17 /* HealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
 		3C363A592A87FB1300400C17 /* cs-final-project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cs-final-project.entitlements"; sourceTree = "<group>"; };
+		3C363A5E2A8BF4EE00400C17 /* ActivityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = "<group>"; };
+		3C363A602A8C305A00400C17 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3CDCF0292A83B88F006FA771 /* cs-final-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs-final-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CDCF02C2A83B88F006FA771 /* cs_final_projectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cs_final_projectApp.swift; sourceTree = "<group>"; };
 		3CDCF02E2A83B88F006FA771 /* ActivityLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogView.swift; sourceTree = "<group>"; };
@@ -55,6 +59,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3C363A5C2A8BF09F00400C17 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3C363A562A86C02D00400C17 /* HealthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3C363A5D2A8BF0A900400C17 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3C363A4E2A8672B900400C17 /* ActivityLogViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		3CDCF0202A83B88F006FA771 = {
 			isa = PBXGroup;
 			children = (
@@ -78,10 +98,11 @@
 				3CDCF02C2A83B88F006FA771 /* cs_final_projectApp.swift */,
 				3C363A582A87F7A900400C17 /* Model */,
 				3CDCF03A2A83BB30006FA771 /* View */,
-				3CDCF0302A83B891006FA771 /* Assets.xcassets */,
+				3C363A5D2A8BF0A900400C17 /* ViewModels */,
+				3C363A5C2A8BF09F00400C17 /* Services */,
 				3CDCF0322A83B891006FA771 /* Preview Content */,
-				3C363A4E2A8672B900400C17 /* ActivityLogViewModel.swift */,
-				3C363A562A86C02D00400C17 /* HealthService.swift */,
+				3CDCF0302A83B891006FA771 /* Assets.xcassets */,
+				3C363A602A8C305A00400C17 /* Extensions.swift */,
 			);
 			path = "cs-final-project";
 			sourceTree = "<group>";
@@ -101,6 +122,7 @@
 				3C363A2A2A83D6A500400C17 /* HomeView.swift */,
 				3CDCF02E2A83B88F006FA771 /* ActivityLogView.swift */,
 				3C363A242A83CEEC00400C17 /* ChallengesView.swift */,
+				3C363A5E2A8BF4EE00400C17 /* ActivityCellView.swift */,
 				3C363A2C2A83D80200400C17 /* CircularProgressView.swift */,
 			);
 			path = View;
@@ -178,9 +200,11 @@
 			files = (
 				3C363A252A83CEEC00400C17 /* ChallengesView.swift in Sources */,
 				3C363A2B2A83D6A500400C17 /* HomeView.swift in Sources */,
+				3C363A5F2A8BF4EE00400C17 /* ActivityCellView.swift in Sources */,
 				3C363A2F2A83DAA300400C17 /* ContentView.swift in Sources */,
 				3CDCF02F2A83B88F006FA771 /* ActivityLogView.swift in Sources */,
 				3C363A2D2A83D80200400C17 /* CircularProgressView.swift in Sources */,
+				3C363A612A8C305A00400C17 /* Extensions.swift in Sources */,
 				3C363A4F2A8672B900400C17 /* ActivityLogViewModel.swift in Sources */,
 				3C363A552A86BAEB00400C17 /* Activity.swift in Sources */,
 				3CDCF02D2A83B88F006FA771 /* cs_final_projectApp.swift in Sources */,

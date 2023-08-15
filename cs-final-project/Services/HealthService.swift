@@ -12,6 +12,8 @@ class HealthService: ObservableObject {
     private let healthStore = HKHealthStore()
     private var serviceAnchor: HKQueryAnchor?
     
+    public static let shared = HealthService()
+    
     func requestAuthorization() {
         guard HKHealthStore.isHealthDataAvailable() else {
             print("HealthKit is not available on this device.")
@@ -47,15 +49,16 @@ class HealthService: ObservableObject {
             }
             
             self.serviceAnchor = newAnchor
-            
+                        
             let activities = workouts.map { workout in
-                
-                let workoutDistance = workout.statistics(for: HKQuantityType(.distanceWalkingRunning))?.sumQuantity()?.doubleValue(for: .meter())
-                
-                return Activity(id: UUID(), startDate: workout.startDate, endDate: workout.endDate, duration: workout.duration, distance: workoutDistance ?? 0.0)
+                let startDate = workout.startDate.inStringFormat()
+                let duration = workout.duration.inStringDurationFormat()
+                let distanceValue = workout.statistics(for: HKQuantityType(.distanceWalkingRunning))?.sumQuantity()?.doubleValue(for: .meter()) ?? 0.0
+                let distance = distanceValue.inKilometerFormat()
+                return Activity(id: UUID(), startDate: startDate, duration: duration, distance: distance)
             }
-            
-            completion(activities, nil)
+                       
+            completion(activities, nil)            
         }
         healthStore.execute(query)
     }
