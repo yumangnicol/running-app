@@ -7,23 +7,33 @@
 
 import Foundation
 
-
 struct Activity: Identifiable {
     let id: UUID
-    let startDate: Date
-    let endDate: Date
-    let duration: Double
-    let distance: Double
+    let startDate: String    
+    let duration: String
+    let distance: String
 }
 
-struct ActivityModel {
-    private(set) var activities: [Activity] = []
-    private 
+class ActivityModel: ObservableObject {
+    @Published private var activities: [Activity] = []
     
-    mutating func addActivity(_ activity: Activity){
+    func getActivities() -> [Activity] {
+        return activities
+    }
+    
+    func addActivity(_ activity: Activity){
         activities.append(activity)
     }
     
-    
-    
+    func fetchActivities() {
+        HealthService.shared.fetchRunningWorkouts { results, error in
+            guard let results, error == nil else {
+                return
+            }
+                                    
+            DispatchQueue.main.async {
+                self.activities.append(contentsOf: results)
+            }
+        }
+    }
 }
