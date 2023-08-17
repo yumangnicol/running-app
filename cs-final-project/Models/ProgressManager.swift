@@ -1,20 +1,14 @@
 //
-//  Activity.swift
+//  ProgressManager.swift
 //  cs-final-project
 //
-//  Created by Nicol Luis Yumang on 8/11/23.
+//  Created by Nicol Luis Yumang on 8/17/23.
 //
 
 import Foundation
 
-struct Activity: Identifiable {
-    let id: UUID
-    let startDate: String    
-    let duration: String
-    let distance: String
-}
 
-class ActivityModel: ObservableObject {
+class ProgressManager: ObservableObject {
     @Published private var activities: [Activity] = []
     
     func getActivities() -> [Activity] {
