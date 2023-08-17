@@ -51,11 +51,8 @@ class HealthService: ObservableObject {
             self.serviceAnchor = newAnchor
                         
             let activities = workouts.map { workout in
-                let startDate = workout.startDate.inStringFormat()
-                let duration = workout.duration.inStringDurationFormat()
-                let distanceValue = workout.statistics(for: HKQuantityType(.distanceWalkingRunning))?.sumQuantity()?.doubleValue(for: .meter()) ?? 0.0
-                let distance = distanceValue.inKilometerFormat()
-                return Activity(id: UUID(), startDate: startDate, duration: duration, distance: distance)
+                let distance = workout.statistics(for: HKQuantityType(.distanceWalkingRunning))?.sumQuantity()?.doubleValue(for: .meter()) ?? 0.0
+                return Activity(id: UUID(), startDate: workout.startDate, duration: workout.duration, distance: distance)
             }
                        
             completion(activities, nil)            
