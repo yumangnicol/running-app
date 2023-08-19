@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ActivityLogView: View {
-//    @ObservedObject var viewModel = ActivityLogViewModel()
-    @EnvironmentObject var activityModel: ActivityModel
+    let activities: [Activity]
             
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,21 +16,21 @@ struct ActivityLogView: View {
                 .font(.title)
                 .padding(20)
             
-            List(activityModel.getActivities()) { activity in
-                ActivityCellView(distance: activity.distance, date: activity.startDate)
+            List(activities) { activity in
+                ActivityLogRowView(distance: activity.distanceAsText, date: activity.startDateAsText)
             }
             .listStyle(.plain)
             .listRowSeparator(.hidden)
-            .onAppear {
-                HealthService.shared.requestAuthorization()
-                activityModel.fetchActivities()
-            }
         }
     }
 }
 
 struct ActivityLogView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityLogView()
+        let activities = [
+            Activity(id: UUID(), startDate: Date.now, duration: 100.32, distance: 1000),
+            Activity(id: UUID(), startDate: Date.now, duration: 200.32, distance: 32000)
+        ]
+        ActivityLogView(activities: activities)
     }
 }

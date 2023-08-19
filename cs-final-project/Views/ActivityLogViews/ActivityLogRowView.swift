@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ActivityCellView: View {
+struct ActivityLogRowView: View {
     let distance: String
     let date: String
     
@@ -32,6 +32,6 @@ struct ActivityCellView: View {
 
 struct ActivityCellView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityCellView(distance: "10KM", date: "This is a date")
+        ActivityLogRowView(distance: "10KM", date: "This is a date")
     }
 }
