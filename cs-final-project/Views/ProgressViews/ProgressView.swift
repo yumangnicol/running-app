@@ -7,11 +7,13 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct ProgressView: View {
+    @EnvironmentObject var progressManager: ProgressManager
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20){
             
-            Text("Run to Mordor Running Challenge")
+            Text(progressManager.activeChallengeName)
                 .font(.title)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -21,18 +23,18 @@ struct HomeView: View {
                     .frame(maxHeight: 400)
                 
                 VStack(){
-                    CircularProgressView(progress: 0.5)
+                    CircularProgressView(percentage: progressManager.progressPercentage, text: "\(progressManager.coveredDistance)")
                         .frame(maxWidth: 300, maxHeight: 300)
                     HStack(spacing: 100){
                         VStack{
                             Text("Goal")
                                 .fontWeight(.heavy)
-                            Text("50Km")
+                            Text(progressManager.goalDistance)
                         }
                         VStack{
                             Text("Remaining")
                                 .fontWeight(.heavy)
-                            Text("50Km")
+                            Text(progressManager.remainingDistance)
                         }
                     }
                 }.padding()
@@ -42,19 +44,26 @@ struct HomeView: View {
                 Text("Last Activity")
                     .font(.title)
                 Spacer()
-                Button("See all") {
-                    print("Hello")
+                NavigationLink("See all") {
+                    ActivityLogView(activities: progressManager.getActivities())
                 }
             }
+                                    
+            ActivityLogRowView(distance: "10KM", date: "This is a date")
             
-            ActivityCellView(distance: "10KM", date: "This is a date")
+            Button("Fetch!") {
+                progressManager.fetchActivities()
+            }
             
         }.padding()
+//            .onAppear {
+//                progressManager.fetchActivities()
+//            }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        ProgressView()
     }
 }

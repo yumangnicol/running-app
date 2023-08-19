@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CircularProgressView: View {
-    let progress: Double
+    let percentage: Double
+    let text: String
     
     var body: some View {
         ZStack {
@@ -18,7 +19,7 @@ struct CircularProgressView: View {
                     lineWidth: 30
                 )
             Circle()
-                .trim(from: 0, to: progress)
+                .trim(from: 0, to: percentage)
                 .stroke(
                     Color(red: 0.00, green: 0.66, blue: 1.00, opacity: 1.00),
                     style: StrokeStyle(
@@ -27,15 +28,17 @@ struct CircularProgressView: View {
                     )
                 )
                 .rotationEffect(.degrees(-90))
-                // 1
-                .animation(.easeOut, value: progress)
-            Text("50KM")
+                .animation(.easeOut, value: percentage)
+            
+            Text(text)
+                .font(.title)
+                .fontWeight(.bold)
         }.padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
     }
 }
 
 struct CircularProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        CircularProgressView(progress: 0.9)
+        CircularProgressView(percentage: 0.7, text: "50KM")
     }
 }
