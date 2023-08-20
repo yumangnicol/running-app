@@ -9,13 +9,16 @@ import SwiftUI
 
 @main
 struct cs_final_projectApp: App {
-    @StateObject var activityModel = ActivityModel()
-    @StateObject var healthService = HealthService()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate    
+    @StateObject var progressManager = ProgressManager()
     
     var body: some Scene {
         WindowGroup {
-            ActivityLogView()
-                .environmentObject(activityModel)
+            ContentView()
+                .environmentObject(progressManager)
+                .onAppear(){
+                    HealthService.shared.requestAuthorization()
+                }
         }
     }
 }
