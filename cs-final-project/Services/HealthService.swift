@@ -7,10 +7,22 @@
 
 import Foundation
 import HealthKit
+import SwiftUI
+
 
 class HealthService: ObservableObject {
     private let healthStore = HKHealthStore()
-    private var serviceAnchor: HKQueryAnchor?
+    
+    @AppStorage(K.Keys.anchor) private var encodedAnchor: Data?
+    private var serviceAnchor: HKQueryAnchor? {
+        if let encodedAnchor {
+            // Decode the data to get HKQueryAnchor
+            if let decodedAnchor = try? NSKeyedUnarchiver.unarchivedObject(ofClass: HKQueryAnchor.self, from: encodedAnchor){
+                return decodedAnchor
+            }
+        }
+        return nil
+    }
     
     public static let shared = HealthService()
     
@@ -34,7 +46,14 @@ class HealthService: ObservableObject {
     }
     
     func fetchRunningWorkouts(completion: @escaping ([Activity]?, Error?) -> Void) {
-        let predicate = HKQuery.predicateForWorkouts(with: .running)
+        let typePredicate = HKQuery.predicateForWorkouts(with: .running)
+        
+        let dayBRO = Calendar.current.startOfDay(for: (UserDefaults.standard.object(forKey: K.Keys.firstAppLaunch)) as! Date)
+        let datePredicate = HKQuery.predicateForSamples(withStart: dayBRO, end: nil)
+                
+                        
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [typePredicate,datePredicate])
+        
         let query = HKAnchoredObjectQuery(type: .workoutType(),
                                           predicate: predicate,
                                           anchor: serviceAnchor,
@@ -47,8 +66,12 @@ class HealthService: ObservableObject {
                 }
                 return
             }
-            
-            self.serviceAnchor = newAnchor
+                        
+            // Store new Anchor
+            if let newEncodedAnchor = try? NSKeyedArchiver.archivedData(withRootObject: newAnchor, requiringSecureCoding: true) {
+                // Store the encoded anchor data in UserDefaults
+                self.encodedAnchor = newEncodedAnchor
+            }
                         
             let activities = workouts.map { workout in
                 let distance = workout.statistics(for: HKQuantityType(.distanceWalkingRunning))?.sumQuantity()?.doubleValue(for: .meter()) ?? 0.0
