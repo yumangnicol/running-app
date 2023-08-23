@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Activity: Identifiable {
-    let id: UUID
-    let startDate: Date
-    let duration: TimeInterval
-    let distance: Double
+class Activity: Object, ObjectKeyIdentifiable {
+    @Persisted(primaryKey: true) var id: ObjectId
+    @Persisted var startDate: Date
+    @Persisted var duration: TimeInterval
+    @Persisted var distance: Double
 }
 
 extension Activity {

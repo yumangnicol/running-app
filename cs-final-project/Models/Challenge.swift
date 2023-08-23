@@ -6,10 +6,14 @@
 //
 
 import Foundation
+import RealmSwift
 
 
-struct Challenge: Identifiable {
-    let id: UUID
-    let name: String
-    let goalDistance: Double
+class Challenge: Object, ObjectKeyIdentifiable {
+    @Persisted(primaryKey: true) var id: ObjectId
+    @Persisted var name: String
+    @Persisted var goalDistance: Double
+    @Persisted var coveredDistance: Double
+    @Persisted var status = ChallengeStatus.incomplete
+    @Persisted var activities = List<Activity>()
 }
