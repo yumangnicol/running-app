@@ -59,7 +59,7 @@ class HealthService: ObservableObject {
                                           anchor: serviceAnchor,
                                           limit: HKObjectQueryNoLimit) { query, samples, deletedSamples, newAnchor, error in
             
-            guard let workouts = samples as? [HKWorkout], error == nil else {
+            guard let workouts = samples as? [HKWorkout], error == nil, let newAnchor else {
                 if let e = error {
                     print("Error fetching running workouts: \(e.localizedDescription)")
                     completion(nil, e)
@@ -75,7 +75,9 @@ class HealthService: ObservableObject {
                         
             let activities = workouts.map { workout in
                 let distance = workout.statistics(for: HKQuantityType(.distanceWalkingRunning))?.sumQuantity()?.doubleValue(for: .meter()) ?? 0.0
-                return Activity(id: UUID(), startDate: workout.startDate, duration: workout.duration, distance: distance)
+                
+                let newActivity = Activity(value: ["startDate": workout.startDate, "duration": workout.duration, "distance": distance] as [String : Any])
+                return newActivity
             }
                        
             completion(activities, nil)            

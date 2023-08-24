@@ -11,8 +11,8 @@ import RealmSwift
 
 class RealmManager {
     static var config: Realm.Configuration {
-        Realm.Configuration(schemaVersion: 1)
-    }
+        Realm.Configuration(schemaVersion: 0)
+    }            
     
     static func setChallenges() {
         let realm = try! Realm()
