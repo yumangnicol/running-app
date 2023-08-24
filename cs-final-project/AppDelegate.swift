@@ -20,7 +20,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         HealthService.shared.requestAuthorization()
                 
         // Set Realm Configuration and Initial Data
-        RealmService().setChallenges()
+        RealmService().loadDefaultChallenges()
         return true
     }
 }
