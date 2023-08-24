@@ -6,25 +6,31 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContentView: View {
-    @EnvironmentObject var progressManager: ProgressManager
+    @ObservedResults(Challenge.self, where: { $0.status == .active }) var activeChallenges
     
     var body: some View {
         NavigationStack {
             TabView {
-                ProgressView()
-                    .tabItem {
-                        Label("Progress", systemImage: "circle.dashed")
-                    }.environmentObject(progressManager)
-                
-                ChallengesView()
-                    .tabItem {
-                        Label("Challenges", systemImage: "trophy.fill")
-                    }
+                if let activeChallenge = activeChallenges.first {
+                    ProgressView(activeChallenge: activeChallenge)
+                        .tabItem {
+                            Label("Progress", systemImage: "circle.dashed")
+                        }
+                    
+                    ChallengesView()
+                        .tabItem {
+                            Label("Challenges", systemImage: "trophy.fill")
+                        }
+                } else {
+                    ChallengesView()
+                }
             }
-        }.onAppear {
-            HealthService.shared.requestAuthorization()
+        }
+        .onAppear {
+//            HealthService.shared.requestAuthorization()
         }
     }
 }

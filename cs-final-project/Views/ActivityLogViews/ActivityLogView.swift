@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ActivityLogView: View {
-    let activities: [Activity]
+    @ObservedRealmObject var activities: RealmSwift.List<Activity>
             
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,7 +18,7 @@ struct ActivityLogView: View {
                 .padding(20)
             
             List(activities) { activity in
-                ActivityLogRowView(distance: activity.distanceAsText, date: activity.startDateAsText)
+                ActivityLogRowView(distance: activity.distance.inKilometerFormat(), date: activity.startDate.inFormatedText())
             }
             .listStyle(.plain)
             .listRowSeparator(.hidden)
@@ -27,10 +28,7 @@ struct ActivityLogView: View {
 
 struct ActivityLogView_Previews: PreviewProvider {
     static var previews: some View {
-        let activities = [
-            Activity(id: UUID(), startDate: Date.now, duration: 100.32, distance: 1000),
-            Activity(id: UUID(), startDate: Date.now, duration: 200.32, distance: 32000)
-        ]
+        let activities = RealmSwift.List<Activity>()
         ActivityLogView(activities: activities)
     }
 }
