@@ -14,6 +14,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             // Set the first app opening date
             UserDefaults.standard.set(Calendar.current.startOfDay(for: Date()), forKey: K.Keys.firstAppLaunch)
         }
+        HealthService.shared.requestAuthorization()
         return true
     }
 }
