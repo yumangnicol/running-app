@@ -36,22 +36,23 @@ extension Challenge {
 //MARK: - Mutators
 
 extension Challenge {
-    func toggleStatus() {
+    func startChallenge() {
         let realm = try! Realm()
-        
-        guard let thawed = self.thaw() else {
+        guard let thawed = self.thaw(), self.status == .incomplete else {
             return
         }
-        
         try! realm.write {
-            switch(thawed.status) {
-            case .incomplete:
-                thawed.status = .active
-            case .active:
-                thawed.status = .complete
-            case .complete:
-                thawed.status = .incomplete
-            }
+            thawed.status = .active
+        }
+    }
+    
+    func completeChallenge() {
+        let realm = try! Realm()
+        guard let thawed = self.thaw(), self.status == .active else {
+            return
+        }
+        try! realm.write {
+            thawed.status = .complete
         }
     }
         
@@ -63,10 +64,13 @@ extension Challenge {
             
             let realm = try! Realm()
             let challenge = realm.object(ofType: Challenge.self, forPrimaryKey: self.id)!
-            
-            print(results)
+                        
             try! realm.write {
                 challenge.activities.append(objectsIn: results)
+            }
+            
+            if self.remainingDistance.isLessThanOrEqualTo(0) {
+                self.completeChallenge()
             }
         }
     }
