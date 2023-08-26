@@ -18,10 +18,9 @@ struct ActivityLogView: View {
                 .padding(20)
             
             List(activities) { activity in
-                ActivityLogRowView(distance: activity.distance.inKilometerFormat(), date: activity.startDate.inFormatedText())
+                ActivityLogRowView(distance: activity.distance.inKilometerFormat(), date: activity.startDate.inFormatedText()).listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-            .listRowSeparator(.hidden)
         }
     }
 }

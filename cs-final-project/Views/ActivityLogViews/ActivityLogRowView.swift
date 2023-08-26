@@ -14,7 +14,7 @@ struct ActivityLogRowView: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(Color(red: 0.44, green: 0.50, blue: 0.58, opacity: 1.00))
+                .foregroundColor(Color(red: 0.07, green: 0.06, blue: 0.07, opacity: 1.00))
                 .frame(maxWidth: .infinity, maxHeight: 80)
             HStack(spacing: 20){
                 Image(systemName: "figure.run")

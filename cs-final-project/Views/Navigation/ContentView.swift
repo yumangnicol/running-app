@@ -12,25 +12,21 @@ struct ContentView: View {
     @ObservedResults(Challenge.self, where: { $0.status == .active }) var activeChallenges
     
     var body: some View {
-        NavigationStack {
-            TabView {
-                if let activeChallenge = activeChallenges.first {
+        NavigationStack {            
+            if let activeChallenge = activeChallenges.first {
+                TabView{
                     ProgressView(activeChallenge: activeChallenge)
                         .tabItem {
                             Label("Progress", systemImage: "circle.dashed")
                         }
-                    
                     ChallengesView()
                         .tabItem {
                             Label("Challenges", systemImage: "trophy.fill")
                         }
-                } else {
-                    ChallengesView()
                 }
+            } else {
+                ChallengesView()
             }
-        }
-        .onAppear {
-//            HealthService.shared.requestAuthorization()
         }
     }
 }
