@@ -47,6 +47,8 @@ struct ProgressView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressView(activeChallenge: DefaultChallenges.challenges.first!)
+        let first10k = Challenge(value: ["name": "First 10K", "goalDistance": 10000.00, "status": ChallengeStatus.active] as [String : Any])
+        
+        ProgressView(activeChallenge: first10k)
     }
 }

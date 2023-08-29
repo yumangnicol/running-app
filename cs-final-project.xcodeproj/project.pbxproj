@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3C09860C2A96557F004E9533 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C09860B2A96557F004E9533 /* RealmService.swift */; };
-		3C09860E2A965713004E9533 /* DefaultChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C09860D2A965713004E9533 /* DefaultChallenges.swift */; };
 		3C0986182A97BC06004E9533 /* DisplayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0986172A97BC06004E9533 /* DisplayExtensions.swift */; };
 		3C363A252A83CEEC00400C17 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A242A83CEEC00400C17 /* ChallengesView.swift */; };
 		3C363A2B2A83D6A500400C17 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A2A2A83D6A500400C17 /* ProgressView.swift */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		3C09860B2A96557F004E9533 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		3C09860D2A965713004E9533 /* DefaultChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChallenges.swift; sourceTree = "<group>"; };
 		3C0986172A97BC06004E9533 /* DisplayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayExtensions.swift; sourceTree = "<group>"; };
 		3C363A242A83CEEC00400C17 /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		3C363A2A2A83D6A500400C17 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				3C363A662A8E701F00400C17 /* Constants.swift */,
-				3C09860D2A965713004E9533 /* DefaultChallenges.swift */,
 				3C0986172A97BC06004E9533 /* DisplayExtensions.swift */,
 				3CCEBED32A9A549F007BD315 /* HiddenViewModifier.swift */,
 			);
@@ -362,7 +359,6 @@
 				3C363A972A9153B700400C17 /* AppDelegate.swift in Sources */,
 				3C363A552A86BAEB00400C17 /* Activity.swift in Sources */,
 				3CDCF02D2A83B88F006FA771 /* cs_final_projectApp.swift in Sources */,
-				3C09860E2A965713004E9533 /* DefaultChallenges.swift in Sources */,
 				3C363A572A86C02D00400C17 /* HealthService.swift in Sources */,
 				3C363A672A8E701F00400C17 /* Constants.swift in Sources */,
 			);
