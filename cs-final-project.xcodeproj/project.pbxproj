@@ -26,11 +26,23 @@
 		3CCEBECE2A9903D1007BD315 /* ChallengeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEBECD2A9903D1007BD315 /* ChallengeRowView.swift */; };
 		3CCEBED02A991432007BD315 /* ProgressCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEBECF2A991432007BD315 /* ProgressCardView.swift */; };
 		3CCEBED42A9A549F007BD315 /* HiddenViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEBED32A9A549F007BD315 /* HiddenViewModifier.swift */; };
+		3CCEBEF92A9E42EF007BD315 /* ChallengesModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEBED62A9E21E2007BD315 /* ChallengesModelTest.swift */; };
+		3CCEBF0A2A9E4D5B007BD315 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3CCEBF092A9E4D5B007BD315 /* Realm */; };
 		3CDCF02D2A83B88F006FA771 /* cs_final_projectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF02C2A83B88F006FA771 /* cs_final_projectApp.swift */; };
 		3CDCF02F2A83B88F006FA771 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF02E2A83B88F006FA771 /* ActivityLogView.swift */; };
 		3CDCF0312A83B891006FA771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CDCF0302A83B891006FA771 /* Assets.xcassets */; };
 		3CDCF0342A83B891006FA771 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CDCF0332A83B891006FA771 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3CCEBEEB2A9E3CF3007BD315 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3CDCF0212A83B88F006FA771 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CDCF0282A83B88F006FA771;
+			remoteInfo = "cs-final-project";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3C09860B2A96557F004E9533 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
@@ -51,6 +63,8 @@
 		3CCEBECD2A9903D1007BD315 /* ChallengeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRowView.swift; sourceTree = "<group>"; };
 		3CCEBECF2A991432007BD315 /* ProgressCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCardView.swift; sourceTree = "<group>"; };
 		3CCEBED32A9A549F007BD315 /* HiddenViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenViewModifier.swift; sourceTree = "<group>"; };
+		3CCEBED62A9E21E2007BD315 /* ChallengesModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesModelTest.swift; sourceTree = "<group>"; };
+		3CCEBEDC2A9E399F007BD315 /* cs-final-projectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cs-final-projectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CDCF0292A83B88F006FA771 /* cs-final-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs-final-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CDCF02C2A83B88F006FA771 /* cs_final_projectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cs_final_projectApp.swift; sourceTree = "<group>"; };
 		3CDCF02E2A83B88F006FA771 /* ActivityLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogView.swift; sourceTree = "<group>"; };
@@ -59,6 +73,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3CCEBED92A9E399F007BD315 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CCEBF0A2A9E4D5B007BD315 /* Realm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CDCF0262A83B88F006FA771 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,11 +159,28 @@
 			path = ChallengesViews;
 			sourceTree = "<group>";
 		};
+		3CCEBEDD2A9E399F007BD315 /* cs-final-projectTests */ = {
+			isa = PBXGroup;
+			children = (
+				3CCEBED62A9E21E2007BD315 /* ChallengesModelTest.swift */,
+			);
+			path = "cs-final-projectTests";
+			sourceTree = "<group>";
+		};
+		3CCEBEE62A9E3B1A007BD315 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3CDCF0202A83B88F006FA771 = {
 			isa = PBXGroup;
 			children = (
 				3CDCF02B2A83B88F006FA771 /* cs-final-project */,
+				3CCEBEDD2A9E399F007BD315 /* cs-final-projectTests */,
 				3CDCF02A2A83B88F006FA771 /* Products */,
+				3CCEBEE62A9E3B1A007BD315 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				3CDCF0292A83B88F006FA771 /* cs-final-project.app */,
+				3CCEBEDC2A9E399F007BD315 /* cs-final-projectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +231,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3CCEBEDB2A9E399F007BD315 /* cs-final-projectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CCEBEE22A9E399F007BD315 /* Build configuration list for PBXNativeTarget "cs-final-projectTests" */;
+			buildPhases = (
+				3CCEBED82A9E399F007BD315 /* Sources */,
+				3CCEBED92A9E399F007BD315 /* Frameworks */,
+				3CCEBEDA2A9E399F007BD315 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3CCEBEEC2A9E3CF3007BD315 /* PBXTargetDependency */,
+			);
+			name = "cs-final-projectTests";
+			packageProductDependencies = (
+				3CCEBF092A9E4D5B007BD315 /* Realm */,
+			);
+			productName = "cs-final-projectTests";
+			productReference = 3CCEBEDC2A9E399F007BD315 /* cs-final-projectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3CDCF0282A83B88F006FA771 /* cs-final-project */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CDCF0372A83B891006FA771 /* Build configuration list for PBXNativeTarget "cs-final-project" */;
@@ -222,6 +283,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					3CCEBEDB2A9E399F007BD315 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 3CDCF0282A83B88F006FA771;
+					};
 					3CDCF0282A83B88F006FA771 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -244,11 +309,19 @@
 			projectRoot = "";
 			targets = (
 				3CDCF0282A83B88F006FA771 /* cs-final-project */,
+				3CCEBEDB2A9E399F007BD315 /* cs-final-projectTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3CCEBEDA2A9E399F007BD315 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CDCF0272A83B88F006FA771 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +334,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3CCEBED82A9E399F007BD315 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CCEBEF92A9E42EF007BD315 /* ChallengesModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CDCF0252A83B88F006FA771 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -289,7 +370,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3CCEBEEC2A9E3CF3007BD315 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CDCF0282A83B88F006FA771 /* cs-final-project */;
+			targetProxy = 3CCEBEEB2A9E3CF3007BD315 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		3CCEBEE32A9E399F007BD315 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 842RED367Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolyumang.cs-final-projectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cs-final-project.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cs-final-project";
+			};
+			name = Debug;
+		};
+		3CCEBEE42A9E399F007BD315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 842RED367Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolyumang.cs-final-projectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cs-final-project.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cs-final-project";
+			};
+			name = Release;
+		};
 		3CDCF0352A83B891006FA771 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -469,6 +602,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3CCEBEE22A9E399F007BD315 /* Build configuration list for PBXNativeTarget "cs-final-projectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CCEBEE32A9E399F007BD315 /* Debug */,
+				3CCEBEE42A9E399F007BD315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3CDCF0242A83B88F006FA771 /* Build configuration list for PBXProject "cs-final-project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -510,6 +652,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3C363A982A92510300400C17 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		3CCEBF092A9E4D5B007BD315 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C363A982A92510300400C17 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
