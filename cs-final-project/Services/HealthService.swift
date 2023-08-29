@@ -13,6 +13,8 @@ import SwiftUI
 class HealthService: ObservableObject {
     private let healthStore = HKHealthStore()
     
+    public static let shared = HealthService()
+    
     @AppStorage(K.Keys.anchor) private var encodedAnchor: Data?
     private var serviceAnchor: HKQueryAnchor? {
         if let encodedAnchor {
@@ -23,8 +25,6 @@ class HealthService: ObservableObject {
         }
         return nil
     }
-    
-    public static let shared = HealthService()
     
     func requestAuthorization() {
         guard HKHealthStore.isHealthDataAvailable() else {
