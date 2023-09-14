@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A struct that contains constant values of the application
 struct K {
     static let dateFormat = "MMM, d y HH:mm"
     static let durationInMinutesFormat = "%.2f Mins"

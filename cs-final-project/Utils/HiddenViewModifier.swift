@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+
+/// A view modifier that presents a blank view when bool argument is true
 struct HiddenModifier: ViewModifier {
     
     let isHidden: Bool
