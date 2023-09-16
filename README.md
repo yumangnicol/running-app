@@ -1,4 +1,4 @@
-# A RUNNING MOBILE APPLICATION THAT USES GAMIFICATION AND GOAL-SETTING AS DRIVERS FOR MOTIVATION
+# A Running Mobile Application That Uses Gamification and Goal-setting as Drivers for Motivation
 
 
 ![project_sample](https://github.com/Birkbeck/msc-project-source-code-files-22-23-yumangnicol/assets/114883697/272bdf97-f7f3-47df-9e2a-86ad84e35412)  
